@@ -1,0 +1,5 @@
+.title-h2{
+    @include font-size(32px);
+    font-weight:$semi-bold;
+    margin-bottom:25px;
+}

@@ -1,0 +1,314 @@
+.header {
+    display:block; 
+    position:relative;
+    //background:$white;
+    background:#666;
+    width:100%;
+    height:75px;
+    border-bottom:1px solid rgba(0,0,0,.1);
+    
+
+    > .container{
+        justify-content: space-between;
+        padding-left:0;
+        padding-right:0;
+        @include flexbox();
+
+        align-items: center;
+        height:100%;
+    }
+}
+
+.header-logo {
+    img {
+        width: 147px;
+        height: 54px;
+    }
+}
+
+.wrap-menu{
+    @include flexbox();
+}
+
+.header-menu {
+    .menu {
+        display: block; 
+        position:relative;
+        @include clearfix;
+    
+        li {
+            list-style-type:none;
+            display: block; 
+            float:left;
+        }
+    
+        a {
+            font-family:$open-sans;
+            //color: $black;
+            color:$white;
+            @include font-size(16px);
+            position: relative;
+            text-decoration:none;
+            padding:10px 20px;
+        }
+    }
+}
+
+.header-auth{
+    margin-left:50px;
+}
+
+.header-auth-wrapper{
+    @include flexbox();
+    align-items:center;
+
+    .header-auth-item{
+        margin:0 10px;
+
+        &:last-child{
+            margin-right:0;
+        }
+    }
+}
+
+.header-auth-item{
+    .auth-btn{
+        display:inline-block;
+        position:relative;
+        font-family:$open-sans;
+        @include font-size(14px);
+        height:40px;
+        line-height:40px;
+        padding-left:15px;
+        padding-right:15px;
+        border:1px solid $white;
+        background:transparent;
+        color:$white;
+        text-align: center;
+        @include border-radius(3px);
+        min-width: 120px;
+        
+
+        &.registration{
+            background-color:$white;
+            color:$black;
+            
+        }
+
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+
+.logged-in{
+    display:block; 
+    position: relative;
+    margin:0;
+    padding:0;
+
+
+
+    > li{
+        position:relative;
+        display:block; 
+        //padding:15px 0;
+
+        &:hover{
+            ul{
+                display:block; 
+            }
+        }
+
+    }
+
+    .logged-in-btn{
+        display:inline-block;
+        position:relative;
+        font-family:$open-sans;
+        @include font-size(14px);
+        height:40px;
+        line-height:40px;
+        padding-left:15px;
+        padding-right:15px;
+        border:1px solid $white;
+        background:transparent;
+        color:$white;
+        text-align: center;
+
+        &:hover{
+            text-decoration:none;
+        }
+
+        i{
+            margin-right:10px;
+        }
+    }
+}
+
+.logged-in-submenu{
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    border:1px solid #d1d7dc;
+    background-color:$white;
+    z-index: 2;
+
+    .user-infos{
+        @include flexbox();
+        align-items:center;
+        padding:10px;
+        border-bottom:1px solid #d1d7dc;
+        font-family:$open-sans;
+        @include font-size(14px);
+        color:$black;
+        margin-bottom:10px;
+    }
+
+    li{
+        //padding:10px 0;
+
+        &:first-child{
+            padding:0;
+        }
+
+        a{
+            display:block; 
+            width:100%;
+            padding:10px 15px;
+            color:$black;
+            font-family:$open-sans;
+
+            &:hover{
+                text-decoration:none;
+                color:#d1d7dc;
+            }
+        }
+    }
+}
+
+.user-infos{
+    .user-infos-sigle{
+        .sigle{
+            width:64px;
+            height: 64px;
+            @include border-radius(50%);
+            background:$black; 
+            color:$white;
+            text-align:center;
+            line-height:64px;
+            @include font-size(22px);
+            font-weight: bold;
+        }
+    }
+
+    .user-infos-txt{
+        padding-left:10px;
+
+        .user-infos-name{
+            font-weight: $bold;
+            line-height:18px;
+            @include other-transition(0.3s, ease-in-out);
+
+            &:hover{
+                color:#007bff;
+            }
+
+            .first-name{
+                text-transform: uppercase;
+            }
+        }
+
+        .user-infos-mail{
+            text-transform: lowercase;
+        }
+    }
+}
+
+
+
+
+.menu-burger {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    margin: auto;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 5;
+
+    @include media-breakpoint-up(xl) {
+        display: none;
+    }
+}
+
+// .hamburger {
+//     span {
+//         width: 30px;
+//         height: 3px;
+//         background: $orange;
+//         display: block;
+//         margin-bottom: 4px;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         @include transition(all .2s linear);
+
+//         .open-menu & {
+//             top: 50%;
+//             transform: translateY(-50%) rotate(40deg);
+//             width: 24px;
+//             height: 2.5px;
+//         }
+
+//         &:nth-child(2){
+//             top: 10px;
+
+//             .open-menu & {
+//                 opacity: 0;
+//             }
+//         }
+
+//         &:last-child{
+//             top: 20px;
+
+//             .open-menu & {
+//                 top: 50%;
+//                 transform: translateY(-50%) rotate(-40deg);
+//             }
+//         }
+//     }
+// }
+
+// .wrap-menu {
+//     display: flex;
+//     @include media-breakpoint-down(lg) {
+//         position: fixed;
+//         top: 0;
+//         left: 100%;
+//         background: $white;
+//         width: 100%;
+//         margin-top: 90px;
+//         height: calc(100vh - 90px);
+//         flex-direction: column;
+//         z-index: 5;
+//         transition: all 0.25s linear;
+//     }
+
+//     @include media-breakpoint-down(md) {
+//         margin-top: 51px;
+//         height: calc(100vh - 51px);
+//         @include landscape {
+//             overflow: hidden;
+//             overflow-y: scroll;
+//             padding-bottom: 100px;
+//         }
+//     }
+
+//     .open-menu & {
+//         left: 0;
+//     }
+// }

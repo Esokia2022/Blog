@@ -1,0 +1,96 @@
+/*boostrap responsive size:*/
+$container-1:970px;
+$container-2:750px;
+
+// RESPONSIVE LAYOUT : BREAKPOINTS
+// --------------------------------------------------
+$xxs      :  321px;
+$xs       :  481px;
+$sm       :  768px;
+$tablet   : 992px;
+$md       : 1025px;
+$desktop  : 1180px; // variable, container desktop
+$lg       : 1200px;
+$large    : 1440px;
+//$menu_break_width:1130px;
+
+
+// CREATE BOOTSTRAP CONTAINER
+// --------------------------------------------------
+
+@mixin make-container {
+  @media (min-width:$lg)  {
+    max-width:$site;
+  }
+  @media (min-width:$md) and (max-width:$lg - 1)  {
+    max-width:$container-1;
+  }
+  @media (min-width:$sm) and (max-width:$md - 1) {
+    max-width:$container-2;
+  }
+  @media (max-width:$sm - 1) {
+    max-width:100%;
+  }
+}
+
+
+
+@mixin responsive($media) {
+    //mobile
+
+    // <321px
+    @if $media == xxxs {
+        @media only screen and (max-width: $xxs - 1) {
+            @content;
+        }
+    }
+
+    // <481px
+    @if $media == xxs {
+        @media only screen and (max-width: $xs - 1) {
+            @content;
+        }
+    }
+
+    // <768px
+    @if $media == xs {
+        @media only screen and (max-width: $sm - 1) {
+            @content;
+        }
+    }
+
+    //<992px
+    @else if $media == sm {
+        @media only screen and (max-width: $tablet - 1) {
+            @content;
+        }
+    }
+    @else if $media == md {
+        @media only screen and (max-width: $desktop - 1) {
+            @content;
+        }
+    }
+    @else if $media == lg {
+        @media only screen and (min-width: $lg + 1) {
+            @content;
+        }
+    } 
+}
+
+@mixin breakpoint-min($breakpoint) {
+    @media only screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin breakpoint($breakpoint) {
+    @media only screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin breakpoints($breakpoint-min, $breakpoint-max) {
+    @media only screen and (min-width: $breakpoint-min) and (max-width: $breakpoint-max) {
+        @content;
+    }
+}

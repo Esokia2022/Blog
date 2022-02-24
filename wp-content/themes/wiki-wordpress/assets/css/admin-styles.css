@@ -1,0 +1,2 @@
+.custom_theme_option_wrapper .form-table tbody > tr th{display:none}
+.custom_theme_option_wrapper .form-table tbody > tr > td{display:flex; flex-direction:column-reverse}

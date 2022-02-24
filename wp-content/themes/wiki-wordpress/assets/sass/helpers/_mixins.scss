@@ -1,0 +1,196 @@
+// FONTS
+// --------------------------------------------------
+
+@mixin font($family, $weight: normal) {
+  font: {
+    family: $family;
+    weight: $weight;
+  }
+}
+
+@function rem($px, $base:$font-size-base) {
+  @return ($px / $base) * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//flexbox
+@mixin flexbox(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin justify($a: center){
+  -webkit-justify-content: $a;
+  -ms-justify-content: $a;
+  justify-content: $a;
+}
+@mixin align($a: center){
+  -webkit-box-align: $a;
+  -webkit-align-items: $a;
+  -moz-box-align: $a;
+  -ms-flex-align: $a;
+  align-items: $a;
+}
+@mixin flex(){
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1;
+}
+// TRANSFORMATIONS
+// --------------------------------------------------
+@mixin transform($transform...) {
+  -webkit-transform: $transform;
+  -ms-transform: $transform; // IE9 only
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+// TRIANGLES
+// --------------------------------------------------
+@mixin border-radius($x){
+  border-radius: $x;
+  -moz-border-radius: $x;
+  -webkit-border-radius: $x;
+}
+
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  -moz-opacity: 0.5;
+  -webkit-opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+//hide-text 
+@mixin hide-text {
+  text-indent: -999em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Platform
+// --------------------------------------------------
+@mixin placeholderUp(){
+  ::-webkit-input-placeholder{ text-transform: uppercase; }
+  ::-moz-placeholder{ text-transform: uppercase; }
+  :-moz-placeholder{ text-transform: uppercase; }
+  :-ms-input-placeholder { text-transform: uppercase; }
+}
+// placeholder
+@mixin placeholder($color, $size:"") {
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: 1;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &:-moz-placeholder {
+    color: $color;
+    opacity: 1;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    opacity: 1;
+    @if $size != "" {
+      font-size: $size;
+    }
+  }
+}
+
+
+@mixin text-shadow($x, $y, $blur, $color) {
+  -webkit-text-shadow: $x $y $blur $color;
+  -moz-text-shadow: $x $y $blur $color;
+  -ms-text-shadow: $x $y $blur $color;
+  -o-text-shadow: $x $y $blur $color;
+  text-shadow: $x $y $blur $color;
+}
+
+@mixin transition($time:300ms,$a:0.215,$b:0.610,$c:0.355,$d:1.000){
+-webkit-transition: all $time cubic-bezier($a, $b, $c, $d); 
+   -moz-transition: all $time cubic-bezier($a, $b, $c, $d);  
+     -o-transition: all $time cubic-bezier($a, $b, $c, $d); 
+        transition: all $time cubic-bezier($a, $b, $c, $d);  /* easeOutCubic */
+}
+
+@mixin other-transition($duree, $function){
+  -webkit-transition: all $duree $function;
+  -moz-transition: all $duree  $function;
+  -o-transition: all $duree  $function;
+  transition: all $duree  $function;
+}
+
+@mixin scale($ratio:1){
+  -webkit-transform: scale($ratio);  /* Chrome, Opera 15+, Safari 3.1+ */
+      -ms-transform: scale($ratio);  /* IE 9 */
+          transform: scale($ratio);  /* Firefox 16+, IE 10+, Opera */
+}
+
+
+@mixin spritesize($img,$width,$height){
+    background: url('../images/sprites/#{$img}.png') 0 0 no-repeat transparent;
+    @include background-size($width $height);
+}
+
+
+@mixin rotate($deg:0deg) {
+    -ms-transform: rotate($deg); /* IE 9 */
+    -webkit-transform: rotate($deg); /* Safari */
+    -moz-transform:rotate($deg);
+    -o-transform:rotate($deg);
+    transform: rotate($deg);
+}
+
+@mixin _NoboxShadow(){
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -ms-box-shadow: none;
+}
+
+@mixin _appearance($appearance) {
+    -moz-appearance: $appearance;
+    -webkit-appearance:$appearance;
+    -ms-appearance:$appearance;
+    -o-appearance:$appearance;
+    appearance:$appearance; 
+}
+
+

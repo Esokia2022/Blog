@@ -1,0 +1,15 @@
+footer{
+    display:block; 
+    position: relative;
+    width:100%;
+    background:#666;
+}
+
+.text-footer{
+    width: 100%;
+    padding: 20px 0;
+    font-family: $open-sans;
+    color: $white;
+    background-color: #666;
+    text-align: center;
+}
