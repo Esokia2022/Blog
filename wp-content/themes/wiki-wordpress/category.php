@@ -42,28 +42,19 @@ $months = array(
                     <?php the_posts_pagination(); ?>
                 </div>
 			</div>
-            <div class="col-3 post-category">
-            <h4>Categories</h4>
-            <?php 
-                //$category = get_terms(['taxonomy' => 'category']);
-                $curTerm = $wp_query->queried_object;
-                $category = get_terms( array( 'category')); 
-            ?>
-            <ul class="nav nav-pills">
-                <?php foreach($category as $category_item): ?>
-
-                    <?php
-                        $classes = array();
-                        if ( $category_item->name == $curTerm->name ) {
-                            $classes[] = 'active';
-                        }
-                    ?>
-
-                    <li class="nav-item <?php echo implode( ' ', $classes ) ?>">
-                        <a href="<?php echo get_term_link($category_item) ?>" class="nav-link"><?php echo $category_item->name ?></a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
+            <div class="col-3 categorie-wrapper">
+                <h3 class="cat-title">Catégorie</h3>
+                <?php 
+                    //$category = get_terms(['taxonomy' => 'category']);
+                    $category = get_terms( array( 'category')); 
+                ?>
+                <ul class="nav nav-pills">
+                    <?php foreach($category as $category_item): ?>
+                        <li class="nav-item">
+                            <a href="<?php echo get_term_link($category_item) ?>" class="nav-link <?php /*echo  is_tax('sport', $category_item->term_id) ? 'active' : ''*/ ?>"><?php echo $category_item->name ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
 		</div>
 	</div>

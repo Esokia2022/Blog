@@ -3,8 +3,8 @@
     if( have_posts() ):				
         while( have_posts() ): the_post(); 
 ?>
-<div class="body-content-wrapper">    
-    <div class="single-post-wrapper" style="padding-top:50px; padding-bottom:50px">
+    
+    <div class="single-post-wrapper" style="margin-top:50px; margin-bottom:50px">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -20,7 +20,6 @@
             </div>
         </div>
     </div>
-</div>
 <?php 
 	endwhile;			
 endif;

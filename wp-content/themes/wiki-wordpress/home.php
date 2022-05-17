@@ -40,7 +40,7 @@
             	<?php if ($loop->have_posts()) : ?>
 					<div class="post-listing" style="padding:50px 0;">
 						<?php while($loop->have_posts()) : $loop->the_post();?>
-							<div class="post-item">
+							<div class="post-item" style="margin-bottom:30px">
 								<h3 class="post-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 								<div class="card-date-terms">
 										<span class="card-date">Publié le <?php echo get_the_date('d').' '. $months[(string)get_the_date('m')].' '.get_the_date('Y') ?></span> par <span><?php the_author() ?></span>
@@ -60,29 +60,20 @@
 					<?php the_posts_pagination(); ?>
 				</div>
 			</div>
-			<div class="col-3 post-category">
-				<h4>Categories</h4>
-				<?php 
-					//$category = get_terms(['taxonomy' => 'category']);
-					$curTerm = $wp_query->queried_object;
-					$category = get_terms( array( 'category')); 
-				?>
-				<ul class="nav nav-pills">
-					<?php foreach($category as $category_item): ?>
-
-						<?php
-							$classes = array();
-							if ( $category_item->name == $curTerm->name ) {
-								$classes[] = 'active';
-							}
-						?>
-
-						<li class="nav-item <?php echo implode( ' ', $classes ) ?>">
-							<a href="<?php echo get_term_link($category_item) ?>" class="nav-link"><?php echo $category_item->name ?></a>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-			</div>
+            <div class="col-3 categorie-wrapper">
+                <h3 class="cat-title">Catégorie</h3>
+                <?php 
+                    //$category = get_terms(['taxonomy' => 'category']);
+                    $category = get_terms( array( 'category')); 
+                ?>
+                <ul class="nav nav-pills">
+                    <?php foreach($category as $category_item): ?>
+                        <li class="nav-item">
+                            <a href="<?php echo get_term_link($category_item) ?>" class="nav-link <?php /*echo  is_tax('sport', $category_item->term_id) ? 'active' : ''*/ ?>"><?php echo $category_item->name ?></a>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
 		</div>
 	</div>
 </div>

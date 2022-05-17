@@ -40,6 +40,20 @@ if ( ! function_exists( 'truncate_txt' ) ) {
 	}
 }
 
+//search global<i class="bi bi-search"></i>
+function get_form_search_global(){
+    $output  = '<form role="search" method="get" action="'.home_url( '/' ).'">';
+    $output .= '<div class="search-forms">';
+    $output .= '<input autocomplete="off" type="text" class="search-form-input" placeholder="Rechercher" value="'. get_search_query().'" name="s" title="Search" />';
+    $output .= '<button type="submit" class="button_search btn btn-outline icon-awesome-search" id="searchsubmit" />';
+    $output .= '<i class="bi bi-search"></i>';
+    $output .= '</button>';
+    $output .= '</div>';
+    $output .= '</form>';
+    return $output;
+}
+
+
 
 
 

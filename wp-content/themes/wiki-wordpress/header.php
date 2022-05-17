@@ -80,17 +80,29 @@ if (!is_scalar($container_class) || empty($container_class)) {
                             <?php if (has_nav_menu('primary')) { ?> 
                                 <?php
                                     wp_nav_menu(
+                                        // array(
+                                        //     'depth' => '4',
+                                        //     'theme_location' => 'primary',
+                                        //     'container' => false,
+                                        //     'walker' => new BootstrapBasic4WalkerNavMenu_custom()
+                                        // )
                                         array(
-                                            'depth' => '4',
-                                            'theme_location' => 'primary',
+                                            'theme_location' => 'primary', 
                                             'container' => false,
-                                            'walker' => new BootstrapBasic4WalkerNavMenu_custom()
+                                            'menu_class'=> 'menu menu-principal',
                                         )
                                     );
                                 ?>
                             <?php } ?>
                         </div>
                         <!--/ header menu -->
+
+                        <!-- header formsearch -->
+                        <div class="header-search">
+                            <?php echo get_form_search_global(); ?>
+                        </div>
+                        <!--/ header formsearch -->
+
                         <!-- header btn -->
                         <?php $user = wp_get_current_user(); ?>
                         <div class="header-auth">

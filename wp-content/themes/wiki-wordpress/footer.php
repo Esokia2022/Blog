@@ -9,7 +9,7 @@
         <footer class="footer">
             <div class="container">
                 <div class="col-12">
-                    <div class="text-footer">© 2022 Wiki WordPress test</div>
+                    <div class="text-footer">© 2022 Wiki WordPress</div>
                 </div>
             </div>
         </footer>
