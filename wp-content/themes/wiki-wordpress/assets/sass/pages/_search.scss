@@ -1,0 +1,21 @@
+.page-search{
+    > .page-title-subtitle{
+        margin-bottom:35px;
+        margin-top:50px;
+    
+        > h1{
+            font-weight:bold;
+            @include font-size(30px);
+        }
+    }
+}
+
+.page-no-results{
+    > .page-title-subtitle{
+        > h1{
+            font-weight:bold;
+            @include font-size(20px);
+            margin-bottom:20px;
+        }
+    }
+}

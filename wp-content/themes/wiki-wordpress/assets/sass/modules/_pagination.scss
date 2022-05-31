@@ -1,0 +1,29 @@
+//pagination
+.pagination{
+    display:block;
+    text-align:center;
+    position:relative;
+
+
+    .nav-links{
+        display: block;
+        position: relative; 
+        text-align:center;
+
+        .page-numbers{
+            display: inline-block; 
+            position: relative; 
+            font-family:$open-sans;
+            @include font-size(16px);
+            min-width:30px;
+            height:30px;
+            line-height: 30px;
+            color:#fff;
+            background:#666;
+            @include border-radius(3px);
+            padding-left:5px; 
+            padding-right:5px;
+            margin:0 5px;
+        }
+    }
+}
