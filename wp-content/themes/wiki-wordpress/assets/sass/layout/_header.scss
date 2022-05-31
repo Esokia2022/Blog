@@ -64,7 +64,7 @@
         }
     
         a {
-            font-family:$open-sans;
+            font-family:$roboto;
             display:inline-block; 
             color:$white;
             @include font-size(16px);
@@ -163,7 +163,7 @@
     .auth-btn{
         display:inline-block;
         position:relative;
-        font-family:$open-sans;
+        font-family:$roboto;
         @include font-size(14px);
         height:40px;
         line-height:40px;
@@ -213,7 +213,7 @@
     .logged-in-btn{
         display:inline-block;
         position:relative;
-        font-family:$open-sans;
+        font-family:$roboto;
         @include font-size(14px);
         height:40px;
         line-height:40px;
@@ -248,7 +248,7 @@
         align-items:center;
         padding:10px;
         border-bottom:1px solid #d1d7dc;
-        font-family:$open-sans;
+        font-family:$roboto;
         @include font-size(14px);
         color:$black;
         margin-bottom:10px;
@@ -266,7 +266,7 @@
             width:100%;
             padding:10px 15px;
             color:$black;
-            font-family:$open-sans;
+            font-family:$roboto;
 
             &:hover{
                 text-decoration:none;
@@ -400,25 +400,25 @@
 //         left: 0;
 //     }
 // }
-.page-search{
-    > .page-title-subtitle{
-        margin-bottom:35px;
-        margin-top:50px;
-    
-        > h1{
-            font-weight:bold;
-            @include font-size(30px);
+
+.form-connexion{
+    padding: 30px;
+    border: 1px solid #ccc;
+    @include border-radius(10px);
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    .form-group{
+        &:last-child{
+            margin-bottom:0;
         }
+    }
+}
+.register-link{
+    a{
+        font-weight:$medium;
     }
 }
 
-.page-no-results{
-    > .page-title-subtitle{
-        > h1{
-            font-weight:bold;
-            @include font-size(20px);
-            margin-bottom:20px;
-        }
-    }
-}
+
 

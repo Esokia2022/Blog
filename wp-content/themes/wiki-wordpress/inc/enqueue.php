@@ -8,7 +8,7 @@
 
 function wiki_load_scripts(){
     //css
-    wp_enqueue_style('fontOpenSans_css', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+    wp_enqueue_style('fontOpenSans_css', 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
     wp_enqueue_style('bootstrap_icon', get_stylesheet_directory_uri().'/assets/css/bootstrap-icons.css');
     wp_enqueue_style('main_style_css', get_stylesheet_directory_uri().'/assets/css/main.min.css');
     

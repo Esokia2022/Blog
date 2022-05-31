@@ -1,5 +1,5 @@
 <?php
-function gpg_widget(){
+/*function gpg_widget(){
 	register_sidebar(array(
 		'name' => 'Footer menu (GPG Granit)',
 		'id' => 'footer-gpg-granit',
@@ -27,4 +27,4 @@ function gpg_widget(){
 		'after_title' => '',
     ));
 }
-add_action( 'widgets_init', 'gpg_widget' );
+add_action( 'widgets_init', 'gpg_widget' );*/

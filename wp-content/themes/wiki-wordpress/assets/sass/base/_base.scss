@@ -4,12 +4,12 @@ html,body{
 }
 
 body{
-  font-weight:400;		 
+  font-weight:$regular;		 
   -webkit-font-smoothing: antialiased;
  	-moz-osx-font-smoothing: grayscale; 	
    word-wrap:break-word;
    background-color:#f9f9f9;
-   font-family:$open-sans;
+   font-family:$roboto;
    @include font-size(16px);
 }
 
